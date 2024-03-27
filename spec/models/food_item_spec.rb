@@ -1,0 +1,15 @@
+# frozen_string_literal: true
+
+require 'rails_helper'
+
+RSpec.describe FoodItem, type: :model do
+  describe 'associations' do
+    it { is_expected.to have_many(:ingredients) }
+    it { is_expected.to have_many(:recipes).through(:ingredients) }
+  end
+
+  describe 'validations' do
+    subject { FactoryBot.create(:food_item) }
+    it { is_expected.to validate_uniqueness_of(:name) }
+  end
+end
