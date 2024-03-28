@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   namespace :api do
     namespace :v1 do
       get 'recipes/index'
+      get 'food_items/index'
     end
   end
   root 'pages#home'
