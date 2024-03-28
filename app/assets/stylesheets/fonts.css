@@ -1,0 +1,34 @@
+@font-face {
+  font-family: 'MadeMirage';
+  src: url(asset-path('MadeMirageRegular.otf')) format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'MadeMirage';
+  src: url(asset-path('MadeMirageBlack.otf')) format('opentype');
+  font-weight: 900; /* Black */
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'MadeMirage';
+  src: url(asset-path('MadeMirageBold.otf')) format('opentype');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'MadeMirage';
+  src: url(asset-path('MadeMirageMedium.otf')) format('opentype');
+  font-weight: 500; /* Medium */
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'MadeMirage';
+  src: url(asset-path('MadeMirageThin.otf')) format('opentype');
+  font-weight: 100; /* Thin */
+  font-style: normal;
+}
