@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { EnvelopeIcon, PhoneIcon, ChevronDownIcon } from '@heroicons/react/20/solid';
-import { decimalToFractions } from '../helpers';
+import { decimalToFractions } from '../utils';
 
 function RecipeCard({ recipe }) {
   const [isExpanded, setIsExpanded] = useState(false);

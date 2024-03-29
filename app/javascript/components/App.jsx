@@ -1,11 +1,16 @@
 import React, { useEffect, useState } from "react";
 import Search from "./Search";
 import RecipeCard from "./RecipeCard";
+import { fetchData } from "../utils";
+
 
 function App() {
   const [count, setCount] = useState(0);
   const [recipes, setRecipes] = useState([]);
   const [activeFilters, setActiveFilters] = useState([]);
+  // const [foodItemFilters, setFoodItemFilters] = useState({ 'foodItems': [], 'presets': [] });
+  const [foodItemFilters, setFoodItemFilters] = useState([]);
+  const [presetFilters, setPresetFilters] = useState([]);
 
   const updateActiveFilters = (obj) => {
     const newActiveFilters = [...activeFilters];
@@ -16,22 +21,22 @@ function App() {
     setActiveFilters(newActiveFilters);
   }
 
-  const loadRecipes = () => {
-    const url = "/api/v1/recipes/index";
-    fetch(url)
-      .then((res) => {
-        if (res.ok) {
-          return res.json();
-        }
-        throw new Error("Network response was not ok.");
-      })
-      .then((res) => setRecipes(res))
-      .catch((err) => message.error('Error: ' + err));
+  const loadFilteredRecipes = () => {
+    const filters = {
+      food_item_ids: activeFilters.map((item) => item.id),
+      presets: presetFilters,
+    };
+
+    fetchData('recipes', filters, setRecipes);
   };
 
   useEffect(() => {
-      loadRecipes();
+      loadFilteredRecipes();
   }, []);
+
+  useEffect(() => {
+    loadFilteredRecipes();
+  }, [activeFilters, foodItemFilters, presetFilters]);
 
   const allRecipes = (
     <ul role='list' className='grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4'>
