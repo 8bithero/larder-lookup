@@ -11,7 +11,7 @@ module Queries
       def by_food_items(food_items)
         joins(:food_items)
           .where(food_items: food_items)
-          .group(:id)
+          .group('recipes.id')
       end
 
       def containing_all_food_item_ids(food_item_ids)
