@@ -11,12 +11,22 @@ module.exports = {
     extend: {
       fontFamily: {
         madeMirage: ['MadeMirage', 'serif'],
+        pacifico: ['Pacifico', 'cursive'],
       },
       fontWeight: {
         normal: 400,
         medium: 500,
         bold: 700,
         black: 900,
+      },
+      colors: {
+        'peach-sorbet': '#ffc19e',
+        'peach-cream': '#fcdbbe',
+        'apricot-glow': '#ffe5c2',
+        'soft-alabaster': '#fff2e0',
+        'ivory-silk': '#f8f0f8',
+        'silver-lining': '#d6d6d6',
+        'charcoal-slate': '#302e2f',
       },
     },
   },
