@@ -70,3 +70,5 @@ group :test do
   gem 'database_cleaner'
   gem 'shoulda-matchers', '~> 6.0'
 end
+
+gem "dockerfile-rails", ">= 1.6", :group => :development

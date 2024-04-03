@@ -1,31 +1,63 @@
 # Pennylane Tech Test - Larder Lookup
 
-[ToDo]
+This is a recipe searching app built for the Pennylane tech test.
+The app has been built as a monorepo containing a **Ruby on Rails 7 API** with a **React front-end**.
+
+A demo of the app loaded with a subset of the data (5065/10013) can be found at:
+https://larder-lookup-2.fly.dev/
+
+## Approach
+The main objective was to search for ingredients and return recipes that include the selected ingredients. The obvious and most straightforward approach would have been to save each recipe's ingredient as a string in an `Ingredients` table and search using `ILIKE`. Instead, I have decided to do some of the work upfront and parse the ingredients into `FoodItems`. The reason behind this upfront parsing is to make the results of the frontend's autocomplete cleaner, and by splitting up the measurements from the actual ingredient items, it becomes possible to introduce features like changing measurement types (i.e., from `imperial` to `metric`), or automatically adjust quantities in order to make more or less servings per recipe.
+
+### Backend
+- Callable Services used to contain and isolate logic
+- Queries have been decoupled from models
+- Rake task to parse and populate data
+- PostgreSQL Trigram's for better search capabilities
+
+##### Potential Improvements
+- Presenter/View layer
+- Request specs
+- Validations for services
+- Add pagination
+
+### Frontend
+- Autocomplete
+- Control Panel to search Ingredients or preset search queries
+- Control panel designed to be extendable and allow additional features like sorting.
+
+##### Potential Improvements
+- State management
+- Test coverage
+- Removal of Stimulas
+- Add sorting/pagination
+- More effective data fetching mechanism
+
 
 ---
 
 ## Setup
 
-### Get code
+#### Get code
 ```bash
 git clone https://github.com/8bithero/larder-lookup
 cd larder-lookup
 ```
 
-### Install gems/packages
+#### Install gems/packages
 ```bash
 bundle install
 yarn install
 ```
 
 
-### Create database
+#### Create database
 ```bash
 rails db:setup
 rails recipes:import
 ```
 
-### Populate data
+#### Populate data
 For all data you can run:
 ```bash
 rails recipes:import
@@ -36,7 +68,7 @@ If you would like to populate the database with a subset of the data, you can ru
 rails 'recipes:import[500]'
 ```
 
-### Start Server
+#### Start Server
 ```bash
 bin/dev
 ```
@@ -44,14 +76,9 @@ Please note you will need to start the server with `bin/dev` rather than `rails 
 
 ---
 
-## Notes
+# Original Pennylane Test Brief
 
 
-### Points of interest
-
-[ToDo]
-
----
 ## Problem statement
 
 > **It's dinner time ! Create an application that helps users find the most relevant recipes that they can prepare with the ingredients that they have at home**

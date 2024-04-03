@@ -2,7 +2,6 @@ import React, { useEffect, useState, useCallback } from 'react';
 import Search from "./Search";
 import { useApi, useFilters } from '../hooks';
 import FilterTags from "./FilterTags";
-import logo from '../images/logo.png';
 import Content from './Content';
 
 function App() {
@@ -30,10 +29,7 @@ function App() {
       <div className='bg-peach-sorbet'>
         <div className='relative mx-auto max-w-8xl sm:px-2 lg:px-8 xl:px-12'>
           <div className='px-4 flex justify-center'>
-            <div className='flex items-center gap-4'>
-              <div className='flex-shrink-0'>
-                <img src={logo} alt='Logo' />
-              </div>
+            <div className='flex items-center p-8'>
               <h1 className='text-6xl font-pacifico'>Larder Lookup</h1>
             </div>
           </div>
