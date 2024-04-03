@@ -22,11 +22,11 @@ module ParseAndCreateRecipe
     attr_reader :recipe_data
 
     def build_recipe
-      Actions::BuildRecipe.new(data: recipe_data).call
+      Actions::BuildRecipe.call(data: recipe_data)
     end
 
     def build_ingredient(ingredient)
-      Actions::BuildIngredient.new(text: ingredient).call
+      Actions::BuildIngredient.call(text: ingredient)
     end
 
   end

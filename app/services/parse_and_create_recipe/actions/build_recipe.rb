@@ -4,6 +4,8 @@ module ParseAndCreateRecipe
   module Actions
     class BuildRecipe
 
+      include Callable
+
       def initialize(data:)
         @data = data
       end

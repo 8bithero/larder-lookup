@@ -4,6 +4,8 @@ module ParseAndCreateRecipe
   module Actions
     class BuildIngredient
 
+      include Callable
+
       FRACTIONS = {
         "\u215b" => '1/8',
         "\u215c" => '3/8',
