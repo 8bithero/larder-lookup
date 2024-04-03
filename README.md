@@ -4,6 +4,7 @@ This is a recipe searching app built for the Pennylane tech test.
 The app has been built as a monorepo containing a **Ruby on Rails 7 API** with a **React front-end**.
 
 A demo of the app loaded with a subset of the data (5065/10013) can be found at:
+
 https://larder-lookup-2.fly.dev/
 
 ## Approach
@@ -15,7 +16,7 @@ The main objective was to search for ingredients and return recipes that include
 - Rake task to parse and populate data
 - PostgreSQL Trigram's for better search capabilities
 
-##### Potential Improvements
+#### Potential Improvements
 - Presenter/View layer
 - Request specs
 - Validations for services
@@ -26,13 +27,12 @@ The main objective was to search for ingredients and return recipes that include
 - Control Panel to search Ingredients or preset search queries
 - Control panel designed to be extendable and allow additional features like sorting.
 
-##### Potential Improvements
+#### Potential Improvements
 - State management
 - Test coverage
 - Removal of Stimulas
 - Add sorting/pagination
 - More effective data fetching mechanism
-
 
 ---
 
@@ -40,7 +40,7 @@ The main objective was to search for ingredients and return recipes that include
 
 #### Get code
 ```bash
-git clone https://github.com/8bithero/larder-lookup
+git clone https://github.com/8bithero/larder-lookup.git
 cd larder-lookup
 ```
 
